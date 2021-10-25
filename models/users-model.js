@@ -2,14 +2,15 @@ const MSSQL = require('../databases/mssql')
 
 class UsersManager extends MSSQL {
     constructor() {
-        const config = {
-            server: '127.0.0.1',
-            port: 3306,
-            database: 'teste_crud',
-            password: 'Ron@aldo123',
-            user: 'root',
-            tableName: 'Users'
-        }
+        // Replace with your bank settings here!
+        // const config = {
+        //     server: '127.0.0.1',
+        //     port: 3306,
+        //     database: 'teste_crud',
+        //     password: 'password',
+        //     user: 'user',
+        //     tableName: 'Users'
+        // }
         super(config)
     }
 
