@@ -15,7 +15,7 @@ And in the 'config\config.json' to:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"username": "",<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"password": "",<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"database": "teste_crud",<br />
-&nbsp;&nbsp;&nbsp;&nbsp;"host": "127.0.0.1",<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"host": "",<br />
 &nbsp;&nbsp;&nbsp;&nbsp;"dialect": "mysql"<br />
 }
 
