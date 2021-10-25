@@ -35,13 +35,6 @@ class UsersManager extends MSSQL {
         this.operation(undefined, 'findAll', cb)
     }
 
-    findUser(obj, cb) {
-        this.operation(obj, 'findUser', (err, result) => {
-            if (err) cb(err)
-            cb(null, result[0])
-        })
-    }
-
     findUserByCod(obj, cb) {
         this.operation({ cod: obj.cod }, 'findUserByCod', (err, result) => {
             if (err) cb(err)

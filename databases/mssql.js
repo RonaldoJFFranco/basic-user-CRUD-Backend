@@ -13,23 +13,18 @@ class MSSQL {
 
         this.CRUD = {
             create: {
-                query: `INSERT INTO \`${config.tableName}\` (name, birthday, photo) VALUES ('%s', '%s', '%s')`,
+                query: `INSERT INTO \`${config.tableName}\` (name, birthday, photo, photoName, photoType) VALUES ('%s', '%s', '%s', '%s', '%s')`,
                 errMsg: `[${this.constructor.name}] >> Error on the user creation. ERROR:`,
                 type: { type: QueryTypes.INSERT }
             },
             update: {
-                query: `UPDATE \`${config.tableName}\` SET name = \'%s\', birthday = \'%s\', photo = \'%s\'`,
+                query: `UPDATE \`${config.tableName}\` SET name = \'%s\', birthday = \'%s\', photo = \'%s\', photoName = \'%s\', photoType = \'%s\'`,
                 errMsg: `[${this.constructor.name}] >> Error on the user update. ERROR:`,
                 type: { type: QueryTypes.UPDATE }
             },
             findAll: {
                 query: `SELECT * FROM \`${config.tableName}\` `,
                 errMsg: `[${this.constructor.name}] >> Error getting data. ERROR:`,
-                type: { type: QueryTypes.SELECT }
-            },
-            findUser: {
-                query: `SELECT * FROM \`${config.tableName}\` WHERE name = \'%s\' AND birthday = \'%s\' AND photo = \'%s\'`,
-                errMsg: `[${this.constructor.name}] >> Error on getting the user. ERROR:`,
                 type: { type: QueryTypes.SELECT }
             },
             findUserByCod: {
@@ -58,7 +53,7 @@ class MSSQL {
                 cb({message: `${this.CRUD[type].errMsg} ${err}`})
             }
         } else if (infos) {
-            let query = format(this.CRUD[type].query, infos.name, infos.birthday, infos.photo)
+            let query = format(this.CRUD[type].query, infos.name, infos.birthday, infos.photo, infos.photoName, infos.photoType)
             if (type === 'update') {
                 query = query + `WHERE cod = ${infos.cod}`
             }

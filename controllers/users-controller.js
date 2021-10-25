@@ -5,19 +5,6 @@ class UsersController {
         this.usersManager = new UsersManager();
     }
 
-    checkNewUser(obj, cb) {
-        this.usersManager.findUser(obj, (err, user) => {
-            if (err) {
-                console.error(`Error getting user: ${err}`)
-                return cb(err)
-            }
-            if (user.length) {
-                return cb({ message: 'User already registered!'})
-            }
-            return cb(null)
-        })
-    }
-
     findUserByCod(obj, cb) {
         this.usersManager.findUserByCod(obj, (err, user) => {
             if (err) {

@@ -18,6 +18,14 @@ module.exports = {
         allowNull: false,
       },
       photo: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      photoName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      photoType: {
         type: Sequelize.STRING,
         allowNull: false,
       }
